@@ -12,7 +12,7 @@ class DcterServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->register(HanifHefaz\Dcter\DcterServiceProvider::class);
+        $this->app->make('HanifHefaz\Dcter\Dcter');
     }
 
     /**

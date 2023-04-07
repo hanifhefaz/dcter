@@ -14,7 +14,7 @@
                 "HanifHefaz\\Dcter\\DcterServiceProvider"
             ],
             "aliases": {
-                "Dcter": "HanifHefaz\\Dcter"
+                "Dcter": "HanifHefaz\\Dcter\\Dcter"
             }
         }
     },

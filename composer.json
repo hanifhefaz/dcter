@@ -8,16 +8,6 @@
             "name": "Hanif Hefaz"
         }
     ],
-    "extra": {
-        "laravel": {
-            "providers": [
-                "HanifHefaz\\Dcter\\DcterServiceProvider"
-            ],
-            "aliases": {
-                "Dcter": "HanifHefaz\\Dcter\\Dcter"
-            }
-        }
-    },
     "minimum-stability": "dev",
     "require": {}
 }

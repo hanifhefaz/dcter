@@ -1,0 +1,13 @@
+{
+    "name": "hanifhefaz/dcter",
+    "description": "A package for converting dates in laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hanif Hefaz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

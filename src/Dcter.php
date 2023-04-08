@@ -1,6 +1,7 @@
 <?php
 
 namespace HanifHefaz\Dcter;
+use \Carbon\Carbon;
 
 // With modification from https://github.com/roozbeh360
 // and,
@@ -266,5 +267,12 @@ class Dcter
         $gm = $i+1; 
         $gd = $g_day_no+1; 
         return $gy . "-" . $gm . "-" . $gd; 
-    } 
+    }
+
+    // Make carbon date object from any converted date.
+
+    public static function Carbonize($date)
+    {
+        return Carbon::parse($date);
+    }
 }

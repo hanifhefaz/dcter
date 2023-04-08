@@ -5,7 +5,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
 
 
-A composer package used to convert Jalali, Hijri, Gregorian and Julian dates to each others.
+A composer package that is used to convert Jalali, Hijri, Gregorian and Julian dates to each others.
 
 ## :beginner: Installation
 

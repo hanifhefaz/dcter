@@ -12,9 +12,6 @@
     "minimum-stability": "dev",
     "require": {},
     "autoload": {
-        "classmap": [
-            "src"
-        ],
         "psr-4": {
             "HanifHefaz\\Dcter\\": "src/"
         }

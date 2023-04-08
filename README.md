@@ -10,17 +10,6 @@ A composer package that is used to convert Jalali, Hijri, Gregorian and Julian d
 
 ```composer require hanifhefaz/dcter``` 
 
-In your ```composer.json``` update the autoload section as this:
-
-```
-"autoload": {
-        "psr-4": {
-            // other code
-            "HanifHefaz\\Dcter\\" : "vendor/hanifhefaz/dcter/src"
-        }
-    },
-```
-
 ## :question: Usage
 
 This package currently consists of 6 methods to convert dates, namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali``` and ```JalaliToGregorian``` methods.

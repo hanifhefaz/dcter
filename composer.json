@@ -1,11 +1,12 @@
 {
     "name": "hanifhefaz/dcter",
-    "description": "A package for converting dates in laravel",
+    "description": "A composer package used to convert Jalali, Hijri, Gregorian and Julian dates to each others.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Hanif Hefaz"
+            "name": "Hanif Hefaz",
+            "email": "hefaz2010@gmail.com"
         }
     ],
     "minimum-stability": "dev",

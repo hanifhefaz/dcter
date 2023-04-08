@@ -16,7 +16,7 @@ In your ```composer.json``` update the autoload section as this:
 "autoload": {
         "psr-4": {
             // other code
-            "HanifHefaz\\Dcter" : "vendor/hanifhefaz/dcter/src"
+            "HanifHefaz\\Dcter\\" : "vendor/hanifhefaz/dcter/src"
         }
     },
 ```

@@ -17,6 +17,8 @@ This package currently consists of 6 methods to convert dates, namely, ```HijriT
 
 each method can be used the same way as we used the one in example, but the ```JulianToHijri``` takes the parameter in julian format, where the output will be a hijri date and the ```HijriToJulian``` takes the parameter as hijri date, and the output will be a julian format.
 
+Please note, that the recommended way of giving input to be converted is ```YYYY-MM-DD```
+
 1. Jalali (Hijri Shamsi) :twisted_rightwards_arrows: Gregorian
 
 ```php

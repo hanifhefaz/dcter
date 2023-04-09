@@ -90,4 +90,16 @@ Contributions are most welcome!
 
 Please fork the repository and push your changes to your own fork. then make a PR!
 
-Thank you!
+## ❤️ Contributors
+
+People who contributed to this package:
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/hanifhefaz/"><img src="https://avatars3.githubusercontent.com/hanifhefaz?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hanif Hefaz</b></sub></a></td>
+  </tr>
+</table>
+

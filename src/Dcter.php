@@ -79,6 +79,7 @@ class Dcter
             $format_Ar = str_split($format);
             $srcDate_Ar = str_split($date);
             for ($i = 0; $i < count($format_Ar); $i++) {
+                if (isset($srcDate_Ar[$i])) {
                 switch ($format_Ar[$i]) {
                     case "D":
                         self::$Day .= $srcDate_Ar[$i];
@@ -90,6 +91,7 @@ class Dcter
                         self::$Year .= $srcDate_Ar[$i];
                         break;
                 }
+            }
             }
         }
     }
@@ -277,4 +279,21 @@ class Dcter
     {
         return Carbon::parse($date);
     }
+
+    public static function HijriToJalali($date, $format = "YYYY-MM-DD")
+    {
+        $gregorianDate = self::HijriToGregorian($date);
+        $jalali = self::GregorianToJalali($gregorianDate);
+        return $jalali;
+    }
+
+    // This function is currently 10 days behind.
+    
+    // public static function JalaliToHijri($date, $format = "YYYY-MM-DD")
+    // {
+    //     $gregorianDate = self::JalaliToGregorian($date);
+    //     $hijri = self::GregorianToHijri($gregorianDate);
+
+    //     return $hijri;
+    // }
 }

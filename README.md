@@ -12,7 +12,9 @@ A composer package that is used to convert Jalali, Hijri, Gregorian and Julian d
 
 ## :question: Usage
 
-This package currently consists of 6 methods to convert dates, namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali``` and ```JalaliToGregorian``` methods.
+This package currently consists of 7 methods to convert dates, namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali```, ```HijriToJalali``` and ```JalaliToGregorian``` methods.
+
+It also has a method to convert a string date to a carbon date object using the ```Carbonize``` method, which comes from the popular Carbon package.
 
 each method can be used the same way as we used the one in example, but the ```JulianToHijri``` takes the parameter in julian format, where the output will be a hijri date and the ```HijriToJulian``` takes the parameter as hijri date, and the output will be a julian format.
 

@@ -8,7 +8,10 @@ A composer package that is used to convert Jalali, Hijri, Gregorian and Julian d
 
 ## How It Works?
 
-![How it works](https://github.com/hanifhefaz/dcter/blob/main/images/process.png?raw=true)
+<img
+  src="https://github.com/hanifhefaz/dcter/blob/main/images/process.png"
+  alt="How it works"
+  width = "100%">
 
 ## :beginner: Installation
 

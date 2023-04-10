@@ -6,6 +6,10 @@
 
 A composer package that is used to convert Jalali, Hijri, Gregorian and Julian dates to each others.
 
+## How It Works?
+
+![How it works](https://github.com/hanifhefaz/dcter/blob/main/images/process.png?raw=true)
+
 ## :beginner: Installation
 
 ```composer require hanifhefaz/dcter``` 

@@ -74,20 +74,22 @@ class Dcter
         self::$Month = "";
         self::$Year = "";
 
-        $format = strtoupper($format);
-        $format_Ar = str_split($format);
-        $srcDate_Ar = str_split($date);
-        for ($i = 0; $i < count($format_Ar); $i++) {
-            switch ($format_Ar[$i]) {
-                case "D":
-                    self::$Day .= $srcDate_Ar[$i];
-                    break;
-                case "M":
-                    self::$Month .= $srcDate_Ar[$i];
-                    break;
-                case "Y":
-                    self::$Year .= $srcDate_Ar[$i];
-                    break;
+        if($date != null) {
+            $format = strtoupper($format);
+            $format_Ar = str_split($format);
+            $srcDate_Ar = str_split($date);
+            for ($i = 0; $i < count($format_Ar); $i++) {
+                switch ($format_Ar[$i]) {
+                    case "D":
+                        self::$Day .= $srcDate_Ar[$i];
+                        break;
+                    case "M":
+                        self::$Month .= $srcDate_Ar[$i];
+                        break;
+                    case "Y":
+                        self::$Year .= $srcDate_Ar[$i];
+                        break;
+                }
             }
         }
     }

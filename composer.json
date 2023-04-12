@@ -13,6 +13,11 @@
     "require": {
         "nesbot/carbon": "^2.16"
     },
+    
+    "require-dev": {
+            "phpunit/phpunit": "10.0"
+        },
+    
     "autoload": {
         "psr-4": {
             "HanifHefaz\\Dcter\\": "src/"

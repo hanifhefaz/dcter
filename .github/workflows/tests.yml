@@ -15,6 +15,7 @@ jobs:
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
+      uses: php-actions/phpunit@v3
       with:
         php-version: '8.1'
 

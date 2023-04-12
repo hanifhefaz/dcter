@@ -97,7 +97,7 @@ $date = "2460043";
 
 Contributions are most welcome!
 
-Please fork the repository and push your changes to your own fork. then make a PR!
+Please read the [Contributions](CONTRIBUTING.md) file.
 
 ## ❤️ Contributors
 

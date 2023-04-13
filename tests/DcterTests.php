@@ -3,7 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use HanifHefaz\Dcter\Dcter;
 
-class DcterTest extends TestCase
+class DcterTests extends TestCase
 {
     public function testHijriToGregorian()
     {

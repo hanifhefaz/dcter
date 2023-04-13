@@ -47,5 +47,12 @@ class DcterTests extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testCarbonize()
+    {
+        $expected = "1443-12-15T00:00:00:000000Z";
+        $actual = Dcter::Carbonize("1443-12-15");
+        $this->assertEquals($expected, $actual);
+    }
+
     
 }

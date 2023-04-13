@@ -29,7 +29,7 @@ class DcterTests extends TestCase
     public function testJalaliToGregorian()
     {
         $expected = "2023-4-13";
-        $actual = Dcter::JalaliToGregorian("1402-1-24", "YYYY-MM-DD");
+        $actual = Dcter::JalaliToGregorian("1402-01-24", "YYYY-MM-DD");
         $this->assertEquals($expected, $actual);
     }
 

@@ -33,5 +33,12 @@ class DcterTests extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testJulianToHijri()
+    {
+        $expected = "1443-12-15";
+        $actual = Dcter::JalaliToGregorian("2459776");
+        $this->assertEquals($expected, $actual);
+    }
+
     
 }

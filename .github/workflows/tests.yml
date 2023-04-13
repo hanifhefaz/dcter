@@ -15,4 +15,4 @@ jobs:
     - name: Install dependencies
       run: composer install
     - name: Run PHPUnit
-      run: php vendor/bin/phpunit
+      run: php vendor/bin/phpunit tests

@@ -6,7 +6,7 @@
 
 A composer package that is used to convert Jalali, Hijri, Gregorian and Julian dates to each others.
 
-Please consider a :star: if you think this is helpfull. 
+Please consider a :star: if you think this is helpful. 
 
 ## How It Works?
 

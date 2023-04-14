@@ -293,6 +293,8 @@ class Dcter
         return Carbon::parse($date);
     }
 
+    // Function to convert Hijri to Jalali date.
+
     public static function HijriToJalali($date, $format = "YYYY-MM-DD")
     {
         $gregorianDate = self::HijriToGregorian($date);

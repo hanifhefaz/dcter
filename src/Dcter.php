@@ -300,13 +300,13 @@ class Dcter
         return $jalali;
     }
 
-    // This function is currently 10 days behind.
+    // Function to convert Jalali to Hijri date.
     
-    // public static function JalaliToHijri($date, $format = "YYYY-MM-DD")
-    // {
-    //     $gregorianDate = self::JalaliToGregorian($date);
-    //     $hijri = self::GregorianToHijri($gregorianDate);
+    public static function JalaliToHijri($date, $format = "YYYY-MM-DD")
+    {
+        $gregorianDate = self::JalaliToGregorian($date);
+        $hijri = self::GregorianToHijri($gregorianDate);
 
-    //     return $hijri;
-    // }
+        return $hijri;
+    }
 }

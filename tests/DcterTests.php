@@ -54,5 +54,19 @@ class DcterTests extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    public function testJalaliToHijri()
+    {
+        $expected = "1444-09-23";
+        $actual = Dcter::JalaliToHijri("1402-01-25", "YYYY-MM-DD");-
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testHijriToJalali()
+    {
+        $expected = "1402-01-25";
+        $actual = Dcter::HijriToJalali("1444-09-23", "YYYY-MM-DD");
+        $this->assertEquals($expected, $actual);
+    }
+
     
 }

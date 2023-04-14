@@ -3,6 +3,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
 [![Total Downloads](https://img.shields.io/packagist/dt/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
 [![Tests](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml/badge.svg)](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml)
+[![GitHub Issues](https://img.shields.io/github/issues/hanifhefaz/dcter.svg)](https://github.com/hanifhefaz/dcter/issues)
 
 A composer package that is used to convert dates between Hijri, Jalali, Gregorian and Julian calendars.
 

@@ -208,8 +208,13 @@ class Dcter
         
         for ($i = 0; $i < 11 && $j_day_no >= $j_days_in_month[$i]; ++$i) 
             $j_day_no -= $j_days_in_month[$i]; 
-        $jm = $i+1; 
+        $jm = $i+1;
+        if($jm<10)
+            $jm = "0". $jm;
+
         $jd = $j_day_no+1; 
+        if($jd<10)
+            $jd = "0". $jd;
         return $jy . "-" . $jm . "-" . $jd;
     } 
 
@@ -269,7 +274,15 @@ class Dcter
         for ($i = 0; $g_day_no >= $g_days_in_month[$i] + ($i == 1 && $leap); $i++) 
             $g_day_no -= $g_days_in_month[$i] + ($i == 1 && $leap); 
         $gm = $i+1; 
+
+        if($gm<10)
+            $gm = "0". $gm;
+
+        
         $gd = $g_day_no+1; 
+        if($gd<10)
+            $gd = "0". $gd;
+
         return $gy . "-" . $gm . "-" . $gd; 
     }
 

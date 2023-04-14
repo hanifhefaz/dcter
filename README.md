@@ -2,18 +2,11 @@
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
 [![Total Downloads](https://img.shields.io/packagist/dt/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
-[![PHPUnit Tests](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml/badge.svg)](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml)
+[![Tests](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml/badge.svg)](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml)
 
-A composer package that is used to convert Jalali, Hijri, Gregorian and Julian dates to each others.
+A composer package that is used to convert dates between Hijri, Jalali, Gregorian and Julian calendars.
 
-Please consider a :star: if you think this is helpful. 
-
-## How It Works?
-
-<img
-  src="https://github.com/hanifhefaz/dcter/blob/main/images/process.png"
-  alt="How it works"
-  width = "100%">
+Please consider a :star: as your support if you think this is helpful.
 
 ## :beginner: Installation
 
@@ -21,13 +14,10 @@ Please consider a :star: if you think this is helpful.
 
 ## :question: Usage
 
-This package currently consists of 7 methods to convert dates, namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali```, ```HijriToJalali``` and ```JalaliToGregorian``` methods.
+This package currently consists of 8 methods namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali```, ```JalaliToGregorian```, ```HijriToJalali```, ```JalaliToHijri``` to convert dates to each other, and ```Carbonize``` method to make a carbon date object from any date in ```YYYY-MM-DD``` format, which comes from the popular Carbon package.
 
-It also has a method to convert a string date to a carbon date object using the ```Carbonize``` method, which comes from the popular Carbon package.
+each method can be used the same way as we used the one in example, but the ```JulianToHijri``` takes the input parameter in julian format, where the output will be a hijri date and the ```HijriToJulian``` takes the input parameter as hijri date, and the output will be a julian format.
 
-each method can be used the same way as we used the one in example, but the ```JulianToHijri``` takes the parameter in julian format, where the output will be a hijri date and the ```HijriToJulian``` takes the parameter as hijri date, and the output will be a julian format.
-
-Please note, that the recommended way of giving input to be converted is ```YYYY-MM-DD```
 
 1. Jalali (Hijri Shamsi) :twisted_rightwards_arrows: Gregorian
 
@@ -37,7 +27,7 @@ use HanifHefaz\Dcter\Dcter;
 
 $date = "1401-01-16";
     $gregorianDate = Dcter::JalaliToGregorian($date);
-    return $gregorianDate; // returns 2022-4-5
+    return $gregorianDate; // returns 2022-04-05
 ```
 
 2. Gregorian :twisted_rightwards_arrows: Jalali (Hijri Shamsi)
@@ -48,7 +38,7 @@ use HanifHefaz\Dcter\Dcter;
 
 $date = "2023-04-08";
     $jalaliDate = Dcter::GregorianToJalali($date);
-    return $jalaliDate; // returns 1402-1-19
+    return $jalaliDate; // returns 1402-01-19
 ```
 
 3. Gregorian :twisted_rightwards_arrows: Hijri (Hijri Qamari)
@@ -92,7 +82,37 @@ use HanifHefaz\Dcter\Dcter;
 
 $date = "2460043";
     $hijriDate = Dcter::JulianToHijri($date);
-    return $hijriDate; // returns 1444-9-17
+    return $hijriDate; // returns 1444-09-17
+```
+6. Hijri :twisted_rightwards_arrows: Jalali (Persian)
+
+```php
+<?php
+use HanifHefaz\Dcter\Dcter;
+
+$date = "1444-09-23";
+    $hijriDate = Dcter::HijriToJalali($date);
+    return $hijriDate; // returns 1402-01-25
+```
+6. Jalali :twisted_rightwards_arrows: Hijri (Hijri Qamari)
+
+```php
+<?php
+use HanifHefaz\Dcter\Dcter;
+
+$date = "1402-01-25";
+    $hijriDate = Dcter::JalaliToHijri($date);
+    return $hijriDate; // returns 1444-09-23
+```
+6. YYYY-MM-DD :twisted_rightwards_arrows: Carbonize
+
+```php
+<?php
+use HanifHefaz\Dcter\Dcter;
+
+$date = "1402-01-25";
+    $hijriDate = Dcter::JalaliToHijri($date);
+    return $hijriDate; // returns 1402-01-25 00:00:00
 ```
 
 ## :performing_arts: Contributions

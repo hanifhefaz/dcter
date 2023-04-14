@@ -1,7 +1,11 @@
 name: PHPUnit Tests
 on:
   push:
-    branches: [main]
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
 jobs:
   phpunit:
     runs-on: ubuntu-latest

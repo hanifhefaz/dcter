@@ -85,7 +85,7 @@ $date = "2460043";
     $hijriDate = Dcter::JulianToHijri($date);
     return $hijriDate; // returns 1444-09-17
 ```
-6. Hijri :twisted_rightwards_arrows: Jalali (Persian)
+7. Hijri :twisted_rightwards_arrows: Jalali (Persian)
 
 ```php
 <?php
@@ -95,7 +95,7 @@ $date = "1444-09-23";
     $hijriDate = Dcter::HijriToJalali($date);
     return $hijriDate; // returns 1402-01-25
 ```
-6. Jalali :twisted_rightwards_arrows: Hijri (Hijri Qamari)
+8. Jalali :twisted_rightwards_arrows: Hijri (Hijri Qamari)
 
 ```php
 <?php
@@ -105,7 +105,7 @@ $date = "1402-01-25";
     $hijriDate = Dcter::JalaliToHijri($date);
     return $hijriDate; // returns 1444-09-23
 ```
-6. YYYY-MM-DD :twisted_rightwards_arrows: Carbonize
+9. YYYY-MM-DD :twisted_rightwards_arrows: Carbonize
 
 ```php
 <?php

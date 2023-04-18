@@ -112,8 +112,8 @@ $date = "1402-01-25";
 use HanifHefaz\Dcter\Dcter;
 
 $date = "1402-01-25";
-    $hijriDate = Dcter::JalaliToHijri($date);
-    return $hijriDate; // returns 1402-01-25 00:00:00
+    $carbonDate = Dcter::Carbonize($date);
+    return $carbonDate; // returns 1402-01-25 00:00:00
 ```
 
 ## :performing_arts: Contributions

@@ -1,4 +1,4 @@
-# Dcter  :calendar: Dates Converter
+# Dcter :calendar: Dates Converter
 
 <img src="images/banner.jpeg">
 
@@ -7,133 +7,237 @@
 [![Tests](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml/badge.svg)](https://github.com/hanifhefaz/dcter/actions/workflows/tests.yml)
 [![GitHub Issues](https://img.shields.io/github/issues/hanifhefaz/dcter.svg)](https://github.com/hanifhefaz/dcter/issues)
 
-A composer package that is used to convert dates between Hijri, Jalali, Gregorian and Julian calendars.
+A Laravel-compatible Composer package that converts dates between **Hijri (Qamari)**, **Jalali (Shamsi/Persian)**, **Gregorian**, and **Julian** calendars.  
+It also includes powerful date utilities, localization, numeral conversions, and Artisan command support.
 
-Please consider a :star: as your support if you think this is helpful.
+Please consider a ⭐ if this package helps you.
 
-## :beginner: Installation
+---
 
-```composer require hanifhefaz/dcter``` 
+## 🧩 Features
 
-## :question: Usage
+✅ Convert between **Hijri**, **Jalali**, **Gregorian**, and **Julian**  
+✅ Get **localized month and weekday names** (English, Arabic, Persian)  
+✅ Flexible **date formatting**  
+✅ Compare and get **differences in days**  
+✅ Get **today’s date** in any calendar  
+✅ Add or subtract days in any calendar  
+✅ Convert **Arabic and English numerals**  
+✅ Validate dates across calendars  
+✅ Integrated **Laravel Facade** and **Service Provider**  
+✅ Artisan command for quick date conversion  
+✅ **Carbonize** any calendar date
 
-This package currently consists of 8 methods namely, ```HijriToGregorian```, ```GregorianToHijri```, ```JulianToHijri```, ```HijriToJulian```, ```GregorianToJalali```, ```JalaliToGregorian```, ```HijriToJalali```, ```JalaliToHijri``` to convert dates to each other, and ```Carbonize``` method to make a carbon date object from any date in ```YYYY-MM-DD``` format, which comes from the popular Carbon package.
+---
 
-each method can be used the same way as we used the one in example, but the ```JulianToHijri``` takes the input parameter in julian format, where the output will be a hijri date and the ```HijriToJulian``` takes the input parameter as hijri date, and the output will be a julian format.
+## 🧭 Installation
 
-
-1. Jalali (Hijri Shamsi) :twisted_rightwards_arrows: Gregorian
-
-```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1401-01-16";
-    $gregorianDate = Dcter::JalaliToGregorian($date);
-    return $gregorianDate; // returns 2022-04-05
+```bash
+composer require hanifhefaz/dcter
 ```
 
-2. Gregorian :twisted_rightwards_arrows: Jalali (Hijri Shamsi)
+For Laravel 8+, it auto-registers via package discovery.  
+If not, manually add to `config/app.php`:
 
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
+'providers' => [
+    HanifHefaz\Dcter\DcterServiceProvider::class,
+],
 
-$date = "2023-04-08";
-    $jalaliDate = Dcter::GregorianToJalali($date);
-    return $jalaliDate; // returns 1402-01-19
+'aliases' => [
+    'Dcter' => HanifHefaz\Dcter\Facades\Dcter::class,
+],
 ```
 
-3. Gregorian :twisted_rightwards_arrows: Hijri (Hijri Qamari)
+---
 
+## 🚀 Usage
+
+### 1️⃣ Core Conversions
+Dcter includes 8 core conversion methods and 1 Carbonize helper:
+
+| Method | Description |
+|--------|--------------|
+| `HijriToGregorian($date)` | Hijri ➜ Gregorian |
+| `GregorianToHijri($date)` | Gregorian ➜ Hijri |
+| `JulianToHijri($date)` | Julian ➜ Hijri |
+| `HijriToJulian($date)` | Hijri ➜ Julian |
+| `GregorianToJalali($date)` | Gregorian ➜ Jalali |
+| `JalaliToGregorian($date)` | Jalali ➜ Gregorian |
+| `HijriToJalali($date)` | Hijri ➜ Jalali |
+| `JalaliToHijri($date)` | Jalali ➜ Hijri |
+| `Carbonize($date)` | Convert any `YYYY-MM-DD` date into a Carbon object |
+
+Example:
 ```php
-<?php
 use HanifHefaz\Dcter\Dcter;
 
-$date = "2023-04-08";
-    $hijriDate = Dcter::GregorianToHijri($date);
-    return $hijriDate; // returns 1444-09-17
+$date = "2025-03-01";
+echo Dcter::GregorianToHijri($date); // 1446-08-29
 ```
 
-4. Hijri (Hijri Qamari) :twisted_rightwards_arrows: Gregorian
+---
 
+## ✨ New Feature Set (v2+)
+
+Below are the new features introduced:
+
+---
+
+### 🗓️ 1. Localized Month Names
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1444-09-17";
-    $gregorianDate = Dcter::HijriToGregorian($date);
-    return $gregorianDate; // returns 2023-04-08
+Dcter::getMonthName(3, 'hijri', 'ar'); // ربيع الأول
+Dcter::getMonthName(1, 'jalali', 'fa'); // فروردین
 ```
 
-5. Hijri (Hijri Qamari) :twisted_rightwards_arrows: Julian
+---
 
+### 📅 2. Weekday Names
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1444-09-17";
-    $julianDate = Dcter::HijriToJulian($date);
-    return $julianDate; // returns 2460043
+Dcter::getWeekdayName('2025-10-08', 'gregorian', 'en'); // Wednesday
+Dcter::getWeekdayName('1447-04-15', 'hijri', 'ar'); // الأربعاء
 ```
 
-6. Julian :twisted_rightwards_arrows: Hijri (Hijri Qamari)
+---
 
+### 🧾 3. Custom Date Formatting
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "2460043";
-    $hijriDate = Dcter::JulianToHijri($date);
-    return $hijriDate; // returns 1444-09-17
+Dcter::formatDate('1447-04-15', 'hijri', 'd F Y', 'en'); 
+// 15 Rabi' al-thani 1447
 ```
-7. Hijri :twisted_rightwards_arrows: Jalali (Persian)
 
+---
+
+### ⚖️ 4. Date Comparison
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1444-09-23";
-    $hijriDate = Dcter::HijriToJalali($date);
-    return $hijriDate; // returns 1402-01-25
+Dcter::compareDates('1447-01-10', '1447-02-01', 'hijri'); 
+// returns -1  (first is earlier)
 ```
-8. Jalali :twisted_rightwards_arrows: Hijri (Hijri Qamari)
 
+---
+
+### 📆 5. Difference in Days
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1402-01-25";
-    $hijriDate = Dcter::JalaliToHijri($date);
-    return $hijriDate; // returns 1444-09-23
+Dcter::diffInDays('1447-01-10', '1447-01-20', 'hijri'); 
+// returns 10
 ```
-9. YYYY-MM-DD :twisted_rightwards_arrows: Carbonize
 
+---
+
+### ⏰ 6. Get Current Date
 ```php
-<?php
-use HanifHefaz\Dcter\Dcter;
-
-$date = "1402-01-25";
-    $carbonDate = Dcter::Carbonize($date);
-    return $carbonDate; // returns 1402-01-25 00:00:00
+Dcter::now();           // Gregorian today
+Dcter::now('hijri');    // Hijri today
+Dcter::now('jalali');   // Jalali today
 ```
 
-## :performing_arts: Contributions
+---
 
-Contributions are most welcome!
+### ➕ 7. Add/Subtract Days
+```php
+Dcter::addDays('1447-01-10', 10, 'hijri'); // 1447-01-20
+Dcter::subDays('1447-01-10', 5, 'hijri');  // 1447-01-05
+```
 
-Please read the [Contributions](CONTRIBUTING.md) file.
+---
 
-## ❤️ Contributors
+### 🔢 8. Numeral Conversion
+```php
+Dcter::toArabicNumerals('2025-10-08'); // ٢٠٢٥-١٠-٠٨
+Dcter::toEnglishNumerals('٢٠٢٥-١٠-٠٨'); // 2025-10-08
+```
 
-People who contributed to this package:
+---
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+### ✅ 9. Date Validation
+```php
+Dcter::isValidDate('1447-13-01', 'hijri'); // false
+```
+
+---
+
+### 🪄 10. Carbon Integration
+```php
+$carbon = Dcter::Carbonize('1402-01-25');
+echo $carbon->addDays(10); // 1402-02-05 00:00:00
+```
+
+---
+
+### 🧩 11. Laravel Facade Usage
+Once installed, use the Facade directly:
+```php
+use Dcter;
+
+echo Dcter::GregorianToHijri('2025-03-01');
+```
+
+---
+
+### 🖥️ 12. Artisan Command
+
+A handy console command to convert dates:
+```bash
+php artisan dcter:convert 2025-03-01 --from=gregorian --to=hijri
+```
+
+Output:
+```
+Converted: 1446-08-29
+```
+
+---
+
+## 🧪 Tests
+
+You can run all tests with:
+
+```bash
+vendor/bin/phpunit
+```
+
+Tests are located in `/tests` and cover all core methods.
+
+---
+
+## 🧰 Configuration (optional)
+
+You may publish the config file (if extended later) using:
+```bash
+php artisan vendor:publish --provider="HanifHefaz\Dcter\DcterServiceProvider"
+```
+
+---
+
+## ❤️ Contributions
+
+Contributions are welcome!
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide before submitting a PR.
+
+---
+
+## 👨‍💻 Contributors
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/hanifhefaz/"><img src="https://avatars3.githubusercontent.com/hanifhefaz?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Hanif Hefaz</b></sub></a></td>
   </tr>
 </table>
 
+---
+
+## 🏷️ License
+
+This package is open-sourced software licensed under the **MIT license**.
+
+---
+
+## 🌟 Summary
+
+| Category | Method |
+|-----------|---------|
+| Conversion | HijriToGregorian, GregorianToHijri, GregorianToJalali, JalaliToGregorian, HijriToJulian, JulianToHijri, HijriToJalali, JalaliToHijri |
+| Formatting & Localization | getMonthName, getWeekdayName, formatDate |
+| Comparison & Math | compareDates, diffInDays, addDays, subDays |
+| Utilities | now, isValidDate, toArabicNumerals, toEnglishNumerals, Carbonize |
+| Laravel Integration | Facade, ServiceProvider, Artisan Command |

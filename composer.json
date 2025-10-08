@@ -1,6 +1,6 @@
 {
     "name": "hanifhefaz/dcter",
-    "description": "A composer package used to convert Jalali, Hijri, Gregorian and Julian dates to each others.",
+    "description": "A composer package used to convert Jalali, Hijri, Gregorian and Julian dates to each others. Plus some extra utilities and helpers.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -22,5 +22,15 @@
         "psr-4": {
             "HanifHefaz\\Dcter\\": "src/"
         }
+    },
+    "extra": {
+    "laravel": {
+      "providers": [
+        "HanifHefaz\\Dcter\\DcterServiceProvider"
+      ],
+      "aliases": {
+        "Dcter": "HanifHefaz\\Dcter\\Facades\\Dcter"
+      }
+    }
     }
 }

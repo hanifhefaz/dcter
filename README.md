@@ -1,6 +1,6 @@
 # Dcter :calendar: Dates Converter
 
-<img src="images/banner.jpeg">
+<img src="images/banner.png">
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
 [![Total Downloads](https://img.shields.io/packagist/dt/hanifhefaz/dcter.svg?style=flat-square)](https://packagist.org/packages/hanifhefaz/dcter)
